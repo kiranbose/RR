@@ -17,8 +17,7 @@ node_modules
 semantic.json
 .sass-cache
 *.css.map
-build/
-dist/
+
 
 
 
