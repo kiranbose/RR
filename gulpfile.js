@@ -15,6 +15,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
     compass = require('gulp-compass'),
+    browserSync = require('browser-sync'),
+    reload = browserSync.reload,
     concat = require('gulp-concat');
 
 // ///////////////////////////////////////////////////////////////////
@@ -29,7 +31,8 @@ gulp.task('scripts',function(){
         .pipe(rename({suffix: '.min'}))
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest(gulpPaths.dist + '/js'));
+        .pipe(gulp.dest(gulpPaths.dist + '/js'))
+        .pipe(reload({stream:true}));
 });
 
 
@@ -49,6 +52,7 @@ gulp.task('vendor', function () {
             gulpPaths.bc + 'angular-material-icons/angular-material-icons.js',
             gulpPaths.bc + 'angular-ui-router/release/angular-ui-router.js'
         ])
+        .pipe(plumber())
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest(gulpPaths.dist + '/js'))
         .pipe(rename('vendor.min.js'))
@@ -61,13 +65,37 @@ gulp.task('vendor', function () {
 // ///////////////////////////////////////////////////////////////////
 gulp.task('compass',function(){
     gulp.src(['app/scss/**/*.scss,app/scss/*.scss'])
+        .pipe(plumber())
         .pipe(compass({
             config_file: './config.rb',
             css: 'dist/css',
             sass: 'app/scss',
             require: ['susy']
         }))
-        .pipe(gulp.dest(gulpPaths.dist + '/css'));
+        .pipe(gulp.dest(gulpPaths.dist + '/css'))
+        .pipe(reload({stream:true}));
+});
+
+
+// ///////////////////////////////////////////////////////////////////
+//  HTML Task
+// ///////////////////////////////////////////////////////////////////
+
+gulp.task('html',function(){
+        gulp.src('dist/**/*.html')
+            .pipe(reload({stream:true}));
+});
+
+// ///////////////////////////////////////////////////////////////////
+//  Browser Sync Task
+// ///////////////////////////////////////////////////////////////////
+
+gulp.task('browser-sync',function(){
+   browserSync({
+       server:{
+           baseDir: "./dist/"
+       }
+   })
 });
 
 
@@ -77,8 +105,9 @@ gulp.task('compass',function(){
 
 gulp.task('watch',function(){
     gulp.watch(['app/js/**/*.js',
-        'app/css/*.css',
-        'app/scss/*.scss'],['scripts','compass']);
+        'app/scss/**/*.scss',
+        'dist/css/**/*.css',
+        'dist/**/*.html'],['scripts','compass','html']);
 });
 
 
@@ -86,4 +115,4 @@ gulp.task('watch',function(){
 //  Default Task
 // ///////////////////////////////////////////////////////////////////
 
-gulp.task('default',['scripts','vendor','compass']);
+gulp.task('default',['scripts','compass','html','browser-sync','watch']);

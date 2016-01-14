@@ -1,8 +1,8 @@
-console.log("hi fjshfkshhsfhkaj");
-console.log("hi fjshf vds vdsv dsv dkshhsfhkaj");
-console.log("hi fjshfk vd vdsv dsvdshhsfhkaj");
-console.log("hi czccxzxzcxcxzdsv");
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed!";
+    document.getElementById("testtext").innerHTML = "Paragraph changed!";
+}
 
-console.log("hi czccxzxzcxcxzdsv");
-
-console.log("hi czccxzxzcxcxzdsv");
+$( document ).ready(function() {
+    document.getElementById("testtext").innerHTML = "lorem ipsum!";
+});
