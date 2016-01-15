@@ -2,7 +2,8 @@ var gulpPaths = {
     "bc": "./bower_components/",
     "src": "./src/",
     "dist": "./dist/",
-    "css": "./css/"
+    "css": "./css/",
+    "app": "./app/"
 };
 
 
@@ -17,7 +18,8 @@ var gulp = require('gulp'),
     compass = require('gulp-compass'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    del = require('del');
 
 // ///////////////////////////////////////////////////////////////////
 //  Scripts Task
@@ -27,11 +29,11 @@ gulp.task('scripts',function(){
     console.log('scipts gulp task running');
     gulp.src(['app/js/**/*.js','!app/js/**/*.min.js'])
         .pipe(concat('app.js'))
-        .pipe(gulp.dest(gulpPaths.dist + 'js'))
+        .pipe(gulp.dest(gulpPaths.app + 'js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest(gulpPaths.dist + '/js'))
+        .pipe(gulp.dest(gulpPaths.app + '/js'))
         .pipe(reload({stream:true}));
 });
 
@@ -54,10 +56,10 @@ gulp.task('vendor', function () {
         ])
         .pipe(plumber())
         .pipe(concat('vendor.js'))
-        .pipe(gulp.dest(gulpPaths.dist + '/js'))
+        .pipe(gulp.dest(gulpPaths.app + '/js'))
         .pipe(rename('vendor.min.js'))
         .pipe(uglify({ output: { ascii_only: true } }))
-        .pipe(gulp.dest(gulpPaths.dist + '/js'));
+        .pipe(gulp.dest(gulpPaths.app + '/js'));
 });
 
 // ///////////////////////////////////////////////////////////////////
@@ -68,11 +70,11 @@ gulp.task('compass',function(){
         .pipe(plumber())
         .pipe(compass({
             config_file: './config.rb',
-            css: 'dist/css',
+            css: 'app/css',
             sass: 'app/scss',
             require: ['susy']
         }))
-        .pipe(gulp.dest(gulpPaths.dist + '/css'))
+        .pipe(gulp.dest(gulpPaths.app + '/css'))
         .pipe(reload({stream:true}));
 });
 
@@ -82,21 +84,58 @@ gulp.task('compass',function(){
 // ///////////////////////////////////////////////////////////////////
 
 gulp.task('html',function(){
-        gulp.src('dist/**/*.html')
-            .pipe(reload({stream:true}));
+    gulp.src('app/**/*.html')
+        .pipe(reload({stream:true}));
 });
+
+// ///////////////////////////////////////////////////////////////////
+//  Build Task
+// ///////////////////////////////////////////////////////////////////
+
+gulp.task('build:cleanfolder',function(cb){
+    return del([
+        'build/**'
+    ],cb);
+});
+
+
+gulp.task('build:copy',['build:cleanfolder'],function(){
+    return gulp.src('app/**/*')
+        .pipe(gulp.dest('build/'));
+});
+
+gulp.task('build:remove',['build:copy'],function(cb){
+    del([
+        'build/scss/',
+        'build/js/**/!(*.min.js)',
+        'build/src/'
+    ],cb);
+});
+
+// Run the build task to create production build
+gulp.task('build',['build:copy','build:remove']);
+
 
 // ///////////////////////////////////////////////////////////////////
 //  Browser Sync Task
 // ///////////////////////////////////////////////////////////////////
 
 gulp.task('browser-sync',function(){
-   browserSync({
-       server:{
-           baseDir: "./dist/"
-       }
-   })
+    browserSync({
+        server:{
+            baseDir: "./app/"
+        }
+    })
 });
+
+gulp.task('build:server',function(){
+    browserSync({
+        server:{
+            baseDir: "./build/"
+        }
+    })
+});
+
 
 
 // ///////////////////////////////////////////////////////////////////
@@ -106,8 +145,8 @@ gulp.task('browser-sync',function(){
 gulp.task('watch',function(){
     gulp.watch(['app/js/**/*.js',
         'app/scss/**/*.scss',
-        'dist/css/**/*.css',
-        'dist/**/*.html'],['scripts','compass','html']);
+        'app/css/**/*.css',
+        'app/**/*.html'],['scripts','compass','html']);
 });
 
 
