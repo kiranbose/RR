@@ -27,7 +27,7 @@ var gulp = require('gulp'),
 
 gulp.task('scripts',function(){
     console.log('scipts gulp task running');
-    gulp.src(['app/js/**/*.js','!app/js/**/*.min.js'])
+    gulp.src(['src/**/*.js','app/js/**/*.js','!app/js/**/*.min.js','!app/js/**/app.js','!app/js/**/vendor.js'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest(gulpPaths.app + 'js'))
         .pipe(rename({suffix: '.min'}))

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="" ng-strict-di>
+<html ng-app="rrApp" ng-strict-di>
 <head>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
@@ -16,6 +16,12 @@
     <span>Hello JS</span>
     <p id="testtext">test text</p>
     <p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
+
+    <div ui-view></div>
+    <!-- We'll also add some navigation: -->
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+
 </div>
 
 <script type="text/javascript" src="js/vendor.min.js" defer></script>
