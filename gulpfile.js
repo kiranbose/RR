@@ -123,7 +123,7 @@ gulp.task('build',['build:copy','build:remove']);
 gulp.task('browser-sync',function(){
     browserSync({
         server:{
-            baseDir: "./app/"
+            baseDir: ["./app/","./src/"]
         }
     })
 });
