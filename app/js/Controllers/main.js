@@ -12,11 +12,11 @@ var rrApp = angular.module('rrApp', ['ui.router']);
         $stateProvider
             .state('state1', {
                 url: "/state1",
-                templateUrl: "./src/home/views/home.html"
+                templateUrl: "src/home/views/home.html"
             })
             .state('state2', {
                 url: "/state2",
-                templateUrl: "./src/home/views/home2.html"
+                templateUrl: "src/home/views/home2.html"
             })
 
     }]);
