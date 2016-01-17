@@ -2,6 +2,9 @@
 $font-stack:    Segoe UI;
 $primary-text: darkgoldenrod;
 $nav-underline-color: goldenrod;
+$rr-gold: goldenrod;
+$rr-gold-dark: darkgoldenrod;
+$rr-gold-light: gold;
 //***************************************************************
 
 .maindiv{
@@ -19,7 +22,7 @@ html, body {
 
 #body_div {
   height: 200px;
-  background-color: green;
+  background-color: white;
   margin-top: 30px;
 }
 
@@ -57,7 +60,8 @@ html, body {
   width: 100%;
   margin: 0 auto;
   background-color: white;
-  //transition: .3s ease-in-out;
+  border: transparent;
+  transition: .3s ease-in-out;
 }
 .rrnavbar-fixed {
   top: 0;
@@ -89,6 +93,11 @@ html, body {
   text-align: center;
   cursor: pointer;
 }
+
+#menuButton{
+  color: $rr-gold-light;
+}
+
 
 @media (max-width: 768px) {
   #floatingline{

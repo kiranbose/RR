@@ -5,9 +5,14 @@
 (function(window, angular,undefined) {
     "use strict";
 // Main
-var rrApp = angular.module('rrApp', ['ui.router',
-                                    'rr.events'
-                                        ]);
+    var rrApp = angular.module('rrApp', ['ui.router',
+        'rr.contact',
+        'rr.events',
+        'rr.festivals',
+        'rr.home',
+        'rr.poojas',
+        'rr.yagam'
+    ]);
     rrApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider) {
         // For any unmatched url, redirect to /state1
         $urlRouterProvider.otherwise("/home");
@@ -15,6 +20,7 @@ var rrApp = angular.module('rrApp', ['ui.router',
             .state('home', {
                 url: "/home",
                 templateUrl: "src/home/views/home.html",
+                controller: 'homeController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-20');
                 },
@@ -36,6 +42,7 @@ var rrApp = angular.module('rrApp', ['ui.router',
             .state('poojas', {
                 url: "/poojas",
                 templateUrl: "src/poojas/views/poojas.html",
+                controller: 'poojasController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-40');
                 },
@@ -46,6 +53,7 @@ var rrApp = angular.module('rrApp', ['ui.router',
             .state('festivals', {
                 url: "/festivals",
                 templateUrl: "src/festivals/views/festivals.html",
+                controller: 'festivalsController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-50');
                 },
@@ -56,6 +64,7 @@ var rrApp = angular.module('rrApp', ['ui.router',
             .state('contact', {
                 url: "/contact",
                 templateUrl: "src/contact/views/contact.html",
+                controller: 'contactController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-60');
                 },
@@ -66,6 +75,7 @@ var rrApp = angular.module('rrApp', ['ui.router',
             .state('yagam', {
             url: "/yagam",
             templateUrl: "src/yagam/views/yagam.html",
+            controller: 'yagamController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-70');
                 },

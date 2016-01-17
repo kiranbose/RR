@@ -83,11 +83,11 @@ gulp.task('compass',function(){
 // ///////////////////////////////////////////////////////////////////
 //  HTML Task
 // ///////////////////////////////////////////////////////////////////
-
-gulp.task('html',function(){
-    gulp.src('app/**/*.html')
-        .pipe(reload({stream:true}));
-});
+//
+//gulp.task('html',function(){
+//    gulp.src('app/**/*.html')
+//        .pipe(reload({stream:true}));
+//});
 
 // ///////////////////////////////////////////////////////////////////
 //  Build Task
@@ -149,7 +149,7 @@ gulp.task('watch',function(){
         'app/src/**/*.js',
         'app/scss/**/*.scss',
         //'app/css/**/*.css',
-        ],['scripts','compass','html']);
+        ],['scripts','compass']);
 });
 
 
@@ -157,4 +157,4 @@ gulp.task('watch',function(){
 //  Default Task
 // ///////////////////////////////////////////////////////////////////
 
-gulp.task('default',['scripts','compass','html','browser-sync','watch']);
+gulp.task('default',['scripts','compass','browser-sync','watch']);
