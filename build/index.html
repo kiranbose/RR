@@ -4,28 +4,96 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
-
+    <title>APP</title>
 
 </head>
 <body layout="row">
+<div class="container-fluid text-center" id="banner">
+    <figure><img class="brand_logo" src="images/gold-logo.jpg" alt="logo"></figure>
+</div>
 
-<div class="maindiv">
+<nav id="nav_bar" class="container-fluid navbar navbar-default rrnavbar text-center">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button id="menuButton" type="button" class="navbar-toggle btn-navbar" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--<span id="selectedMenu" class="text-center">aa{{selectedMenuItem}}</span>-->
+            <a id="brand_logo_minimized"  class="navbar-brand hidden" href="#">
+                <figure><img class="brand_logo_min" src="images/gold-logo.jpg" alt="logo"></figure>
+            </a>
+        </div>
+
+
+    <div id="myNavbar" class="navbar-collapse">
+        <ul class="nav navbar-collapse">
+            <li class="item1" ui-sref="home"><span href="#">HOME</span></li><!--
+         --><li class="item2" ui-sref="events"><span href="#">EVENTS</span></li><!--
+         --><li class="item3" ui-sref="poojas"><span href="#">POOJAS</span></li><!--
+         --><li class="item4" ui-sref="festivals"><span href="#">FESTIVALS</span></li>
+            <li class="item5" ui-sref="contact"><span href="#">CONTACT</span></li>
+            <li class="item6" ui-sref="yagam"><span href="#">YAGAM</span></li>
+            <hr id="floatingline"/>
+            <div class="container-fluid goldline"></div>
+        </ul>
+    </div>
+    </div>
+
+
+
+    </nav>
+
+<div class="container text-center" ui-view></div>
+
+<div class="container text-center" id='body_div'>
+    <p style='margin: 0; padding-top: 50px;'>and more stuff to continue scrolling here</p>
+</div>
+    <!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+        <!--<div class="navbar-header">-->
+            <!--<a class="navbar-brand" href="#">Brand</a>-->
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+        <!--</div>-->
+        <!--<div class="navbar-collapse collapse">-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--<li class="active"><a href="#">Home</a></li>-->
+                <!--<li><a href="#about">About</a></li>-->
+                <!--<li><a href="#contact">Contact</a></li>-->
+            <!--</ul>-->
+            <!--<div class="navbar-header navbar-right">-->
+                <!--<p class="navbar-text">-->
+                    <!--<span class="glyphicon glyphicon-align-left" aria-hidden="true">Username</span>-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
+
+<div class="maindiv container">
     <span>Hello JS</span>
     <p id="testtext">test text</p>
     <p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
 
-    <div ui-view></div>
-    <!-- We'll also add some navigation: -->
-    <a ui-sref="state1">State 1</a>
-    <a ui-sref="state2">State 2</a>
+    <!--<div ui-view></div>-->
+    <!--&lt;!&ndash; We'll also add some navigation: &ndash;&gt;-->
+    <!--&lt;!&ndash;<a ui-sref="state1">State 1</a>&ndash;&gt;-->
+    <!--<a ui-sref="state2">State 2</a>-->
 
 </div>
 
+
 <script type="text/javascript" src="js/vendor.min.js" defer></script>
 <script type="text/javascript" src="js/app.js" defer></script>
+
 
 </body>
 </html>
