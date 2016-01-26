@@ -11,7 +11,9 @@
         'rr.festivals',
         'rr.home',
         'rr.poojas',
-        'rr.yagam'
+        'rr.yagam',
+        'angular-loading-bar',
+        'ngAnimate'
     ]);
     rrApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider) {
         // For any unmatched url, redirect to /state1
@@ -94,11 +96,10 @@ $(document).ready(function() {
         //if you hard code, then use console
         //.log to determine when you want the
         //nav bar to stick.
-        console.log($(window).scrollTop())
+        console.log($(window).scrollTop());
         if ($(window).scrollTop() > 230) {
             $('#nav_bar').addClass('rrnavbar-fixed');
             $('#brand_logo_minimized').removeClass('hidden');
-
         }
         if ($(window).scrollTop() < 231) {
             $('#nav_bar').removeClass('rrnavbar-fixed');

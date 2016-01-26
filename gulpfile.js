@@ -19,6 +19,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
     concat = require('gulp-concat'),
+    concatCSS = require('gulp-concat-css'),
+    minifyCSS = require('gulp-minify-css'),
     del = require('del');
 
 // ///////////////////////////////////////////////////////////////////
@@ -27,7 +29,7 @@ var gulp = require('gulp'),
 
 gulp.task('scripts',function(){
     console.log('scipts gulp task running');
-    gulp.src(['app/js/**/*.js','app/src/**/*.js','!app/js/**/*.min.js','!app/js/**/app.js','!app/js/**/vendor.js'])
+    gulp.src(['app/js/Controllers/*.js','app/js/Directives/*.js','app/src/**/*.js'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest(gulpPaths.app + 'js'))
         .pipe(rename({suffix: '.min'}))
@@ -52,7 +54,9 @@ gulp.task('vendor', function () {
             gulpPaths.bc + 'angular-bootstrap/ui-bootstrap-tpls.min.js',
             gulpPaths.bc + 'angular-aria/angular-aria.js',
             gulpPaths.bc + 'angular-material-icons/angular-material-icons.js',
-            gulpPaths.bc + 'angular-ui-router/release/angular-ui-router.js'
+            gulpPaths.bc + 'angular-ui-router/release/angular-ui-router.js',
+            gulpPaths.bc + 'angular-loading-bar/build/loading-bar.js',
+            gulpPaths.bc + 'angular-animate/angular-animate.js'
         ])
         .pipe(plumber())
         .pipe(concat('vendor.js'))
@@ -60,13 +64,25 @@ gulp.task('vendor', function () {
         .pipe(rename('vendor.min.js'))
         .pipe(uglify({ output: { ascii_only: true } }))
         .pipe(gulp.dest(gulpPaths.app + '/js'));
+
+    // Vendor CSS files concatenation
+    gulp.src([
+            gulpPaths.bc + 'angular-loading-bar/build/loading-bar.css',
+            gulpPaths.bc + 'font-awesome/css/font-awesome.css',
+            gulpPaths.bc + 'bootstrap/dist/css/bootstrap.css'
+        ])
+        .pipe(concat('vendor.css'))
+        .pipe(gulp.dest(gulpPaths.app + '/css'))
+        .pipe(rename('vendor.min.css'))
+        .pipe(minifyCSS({processImport: false}))
+        .pipe(gulp.dest(gulpPaths.app + '/css'));
 });
 
 // ///////////////////////////////////////////////////////////////////
 //  Compass/Sass Task
 // ///////////////////////////////////////////////////////////////////
 gulp.task('compass',function(){
-    gulp.src(['app/scss/**/*.scss,app/scss/*.scss'])
+    gulp.src(['app/scss/**/*.scss,app/scss/*.scss,app/src/**/*.scss'])
         .pipe(plumber())
         .pipe(compass({
             config_file: './config.rb',
@@ -80,14 +96,14 @@ gulp.task('compass',function(){
 
 
 
-// ///////////////////////////////////////////////////////////////////
-//  HTML Task
-// ///////////////////////////////////////////////////////////////////
-//
-//gulp.task('html',function(){
-//    gulp.src('app/**/*.html')
-//        .pipe(reload({stream:true}));
-//});
+///////////////////////////////////////////////////////////////////
+// HTML Task
+///////////////////////////////////////////////////////////////////
+
+gulp.task('html',function(){
+    gulp.src('app/**/*.html')
+        .pipe(reload({stream:true}));
+});
 
 // ///////////////////////////////////////////////////////////////////
 //  Build Task
@@ -145,11 +161,13 @@ gulp.task('build:server',function(){
 // ///////////////////////////////////////////////////////////////////
 
 gulp.task('watch',function(){
-    gulp.watch(['app/js/**/*.js',
+    gulp.watch(['app/js/Controllers/*.js',
+        'app/js/Directives/*.js',
         'app/src/**/*.js',
         'app/scss/**/*.scss',
+        'app/src/**/*.scss',
         //'app/css/**/*.css',
-        ],['scripts','compass']);
+    ],['scripts','compass','html']);
 });
 
 
@@ -157,4 +175,4 @@ gulp.task('watch',function(){
 //  Default Task
 // ///////////////////////////////////////////////////////////////////
 
-gulp.task('default',['scripts','compass','browser-sync','watch']);
+gulp.task('default',['scripts','compass','browser-sync','watch','html']);

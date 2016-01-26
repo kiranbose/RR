@@ -11,7 +11,9 @@
         'rr.festivals',
         'rr.home',
         'rr.poojas',
-        'rr.yagam'
+        'rr.yagam',
+        'angular-loading-bar',
+        'ngAnimate'
     ]);
     rrApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider) {
         // For any unmatched url, redirect to /state1
@@ -94,11 +96,10 @@ $(document).ready(function() {
         //if you hard code, then use console
         //.log to determine when you want the
         //nav bar to stick.
-        console.log($(window).scrollTop())
+        console.log($(window).scrollTop());
         if ($(window).scrollTop() > 230) {
             $('#nav_bar').addClass('rrnavbar-fixed');
             $('#brand_logo_minimized').removeClass('hidden');
-
         }
         if ($(window).scrollTop() < 231) {
             $('#nav_bar').removeClass('rrnavbar-fixed');
@@ -155,9 +156,9 @@ $(document).ready(function() {
 
 (function (window, angular, undefined) {
     "use strict";
-    var rrFestivalsControllers = angular.module('rr.festivals.controllers', []);
+    var rrEventsControllers = angular.module('rr.events.controllers', []);
 
-    rrFestivalsControllers.controller('festivalsController', ['$scope','$window',function ($scope,$window) {
+    rrEventsControllers.controller('eventsController', ['$scope','$window',function ($scope,$window) {
 
     //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
     $scope.selectedMenuItem = "EVENTS";
@@ -175,8 +176,8 @@ $(document).ready(function() {
 (function(window, angular, undefined) {
     "use strict";
 
-    angular.module("rr.festivals", [
-        "rr.festivals.controllers"
+    angular.module("rr.events", [
+        "rr.events.controllers"
     ]);
 
 })(window, window.angular);
@@ -208,6 +209,37 @@ $(document).ready(function() {
 
     angular.module("rr.home", [
         "rr.home.controllers"
+    ]);
+
+})(window, window.angular);
+/**
+ * Created by kiran on 1/17/2016.
+ */
+
+(function (window, angular, undefined) {
+    "use strict";
+    var rrFestivalsControllers = angular.module('rr.festivals.controllers', []);
+
+    rrFestivalsControllers.controller('festivalsController', ['$scope','$window',function ($scope,$window) {
+
+    //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
+    $scope.selectedMenuItem = "EVENTS";
+    $scope.pageData = "Hello event";
+    console.log("hello");
+
+
+    }]);
+
+
+})(window, window.angular);
+/**
+ * Created by kiran on 1/17/2016.
+ */
+(function(window, angular, undefined) {
+    "use strict";
+
+    angular.module("rr.festivals", [
+        "rr.festivals.controllers"
     ]);
 
 })(window, window.angular);
@@ -270,37 +302,6 @@ $(document).ready(function() {
 
     angular.module("rr.yagam", [
         "rr.yagam.controllers"
-    ]);
-
-})(window, window.angular);
-/**
- * Created by kiran on 1/17/2016.
- */
-
-(function (window, angular, undefined) {
-    "use strict";
-    var rrEventsControllers = angular.module('rr.events.controllers', []);
-
-    rrEventsControllers.controller('eventsController', ['$scope','$window',function ($scope,$window) {
-
-    //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
-    $scope.selectedMenuItem = "EVENTS";
-    $scope.pageData = "Hello event";
-    console.log("hello");
-
-
-    }]);
-
-
-})(window, window.angular);
-/**
- * Created by kiran on 1/17/2016.
- */
-(function(window, angular, undefined) {
-    "use strict";
-
-    angular.module("rr.events", [
-        "rr.events.controllers"
     ]);
 
 })(window, window.angular);
