@@ -51,7 +51,7 @@ gulp.task('vendor', function () {
             gulpPaths.bc + 'angular/angular.js',
             gulpPaths.bc + 'bootstrap/dist/js/bootstrap.js',
             gulpPaths.bc + 'angularjs-toaster/toaster.js',
-            gulpPaths.bc + 'angular-bootstrap/ui-bootstrap-tpls.min.js',
+            //gulpPaths.bc + 'angular-bootstrap/ui-bootstrap-tpls.min.js',
             gulpPaths.bc + 'angular-aria/angular-aria.js',
             gulpPaths.bc + 'angular-material-icons/angular-material-icons.js',
             gulpPaths.bc + 'angular-ui-router/release/angular-ui-router.js',
@@ -68,7 +68,7 @@ gulp.task('vendor', function () {
     // Vendor CSS files concatenation
     gulp.src([
             gulpPaths.bc + 'angular-loading-bar/build/loading-bar.css',
-            gulpPaths.bc + 'font-awesome/css/font-awesome.css',
+            gulpPaths.bc + 'font-awesome/css/font-awesome.min.css',
             gulpPaths.bc + 'bootstrap/dist/css/bootstrap.css'
         ])
         .pipe(concat('vendor.css'))

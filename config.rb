@@ -8,5 +8,5 @@ css_dir = "css"
 images_dir  = "images"
 javascript_dir = "js"
 preferred_syntax = :scss
-output_style = :compressed
+output_style = :expanded
 relative_assets  = true

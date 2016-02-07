@@ -1,11 +1,18 @@
 //*******************************Variables***********************
-$font-stack:    Segoe UI;
+$font-stack: 'Roboto', sans-serif;
 $primary-text: darkgoldenrod;
 $nav-underline-color: goldenrod;
 $rr-gold: goldenrod;
 $rr-gold-dark: darkgoldenrod;
+$rr-gold-darker: #926318;
 $rr-gold-light: gold;
 //***************************************************************
+
+
+//*******************************imports***********************
+@import '../src/home/views/home.scss';
+//***************************************************************
+
 
 .maindiv{
   height: 200px;
@@ -15,10 +22,16 @@ $rr-gold-light: gold;
   border-radius: 5px;
 }
 html, body {
-  font-family: $font-stack;
-  height: 4000px;
+  //font-family: $font-stack;
+  height: auto;
 }
 
+.whiteText{
+  color:white;
+}
+.blackText{
+  color:black;
+}
 
 
 #body_div {
@@ -202,7 +215,10 @@ html, body {
 .rr-margin-left-70{
   margin-left: 70% !important;
 }
-
+//
+//.item1 .item2 .item3 .item4 .item5 .item6{
+//  width: 100px !important;
+//}
 
 .item1:hover ~ #floatingline{
   @extend .rr-margin-left-20;
@@ -233,3 +249,8 @@ html, body {
 }
 ///*********************NAVBAR END*************************/
 
+
+.page-footer button{
+  width: 150px;
+  //height: 50px;
+}
