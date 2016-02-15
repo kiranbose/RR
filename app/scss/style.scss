@@ -82,6 +82,14 @@ html, body {
 #menuButton:hover{
   background-color: $rr-gold-light;
 }
+.modal-footer button{
+  background-color: $rr-gold-dark;
+  color:White;
+}
+.modal-footer button:hover{
+  background-color: $rr-gold !important;
+  color:White;
+}
 
 .rrnavbar {
   width: 100%;
@@ -250,7 +258,71 @@ html, body {
 ///*********************NAVBAR END*************************/
 
 
-.page-footer button{
+.page-footer .btn{
   width: 150px;
   //height: 50px;
 }
+
+@import '../src/events/views/events.scss';
+
+
+
+
+/* Content */
+//*************************************************************************************************/
+/***********************************VIEWER JS pictures CSS start***********************************/
+//*************************************************************************************************/
+//*************************************************************************************************/
+.clearfix{
+  width: 100%;
+}
+
+.docs-pictures {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.docs-pictures > li {
+  float: left;
+  width: 20%;
+  height: 33.3%;
+  margin: 0 -1px -1px 0;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.docs-pictures > li > img {
+  width: 100%;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+.docs-toggles > .btn,
+.docs-toggles > .btn-group {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+  .docs-collapse {
+    display: block;
+  }
+}
+
+.docs-buttons > .btn-group,
+.docs-buttons > .input-group {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.docs-buttons .input-group-btn {
+  width: 50%;
+}
+
+.docs-buttons .input-group-btn .btn {
+  width: 100%;
+}
+
+/***********************************VIEWER JS pictures CSS end***********************************/
+
+@import '../src/poojas/views/poojas.scss';

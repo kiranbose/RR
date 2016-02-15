@@ -1,4 +1,4 @@
-.maketextgold, .homesection1 #storyhead {
+.maketextgold, .homesection1 #storyhead, .main-events .event-head {
   color: #D5AD6D;
   /*if no support for background-clip*/
   background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, #d5ad6d 0%, #d5ad6d 26%, #e2ba78 35%, #a37e43 45%, #91703b 61%, #d5ad6d 100%);
@@ -137,6 +137,16 @@ html, body {
   background-color: gold;
 }
 
+.modal-footer button {
+  background-color: darkgoldenrod;
+  color: White;
+}
+
+.modal-footer button:hover {
+  background-color: goldenrod !important;
+  color: White;
+}
+
 .rrnavbar {
   width: 100%;
   margin: 0 auto;
@@ -251,6 +261,73 @@ html, body {
   background-color: goldenrod;
 }
 
-.page-footer button {
+.page-footer .btn {
   width: 150px;
+}
+
+.main-events .event-head {
+  font-size: x-large;
+}
+
+/* Content */
+/***********************************VIEWER JS pictures CSS start***********************************/
+.clearfix {
+  width: 100%;
+}
+
+.docs-pictures {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.docs-pictures > li {
+  float: left;
+  width: 20%;
+  height: 33.3%;
+  margin: 0 -1px -1px 0;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.docs-pictures > li > img {
+  width: 100%;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+.docs-toggles > .btn,
+.docs-toggles > .btn-group {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+  .docs-collapse {
+    display: block;
+  }
+}
+.docs-buttons > .btn-group,
+.docs-buttons > .input-group {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.docs-buttons .input-group-btn {
+  width: 50%;
+}
+
+.docs-buttons .input-group-btn .btn {
+  width: 100%;
+}
+
+/***********************************VIEWER JS pictures CSS end***********************************/
+.parallax .parallax-content {
+  background-color: whitesmoke;
+  webkit-filter: brightness(20%);
+}
+.parallax .parallax-content h2 {
+  color: black;
+}
+.parallax .parallax-content h5 {
+  color: black;
 }

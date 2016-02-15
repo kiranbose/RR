@@ -8,7 +8,7 @@
     var rrApp = angular.module('rrApp', ['ui.router',
         'rr.contact',
         'rr.events',
-        'rr.festivals',
+        'rr.gallery',
         'rr.home',
         'rr.poojas',
         'rr.yagam',
@@ -52,10 +52,10 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-40');
                 }
             })
-            .state('festivals', {
-                url: "/festivals",
-                templateUrl: "src/festivals/views/festivals.html",
-                controller: 'festivalsController',
+            .state('gallery', {
+                url: "/gallery",
+                templateUrl: "src/gallery/views/gallery.html",
+                controller: 'galleryController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-50');
                 },
@@ -117,8 +117,10 @@ $(document).ready(function() {
         });
 
 
-
 });
+
+
+
 /**
  * Created by kiran on 1/17/2016.
  */
@@ -187,18 +189,49 @@ $(document).ready(function() {
 
 (function (window, angular, undefined) {
     "use strict";
-    var rrFestivalsControllers = angular.module('rr.festivals.controllers', []);
+    var rrFestivalsControllers = angular.module('rr.gallery.controllers', []);
 
-    rrFestivalsControllers.controller('festivalsController', ['$scope','$window',function ($scope,$window) {
+    rrFestivalsControllers.controller('galleryController', ['$scope','$window',function ($scope,$window) {
 
     //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
     $scope.selectedMenuItem = "EVENTS";
     $scope.pageData = "Hello event";
     console.log("hello");
 
+        var $images = $('.docs-pictures');
+        var $toggles = $('.docs-toggles');
+        var $buttons = $('.docs-buttons');
+        var options = {
+            // inline: true,
+            rotatable: false,
+            url: 'data-original',
+
+        };
+
+        function toggleButtons(mode) {
+            if (/modal|inline|none/.test(mode)) {
+                $buttons.
+                find('button[data-enable]').
+                prop('disabled', true).
+                filter('[data-enable*="' + mode + '"]').
+                prop('disabled', false);
+            }
+        }
+
+        $images.viewer(options);
+
+        toggleButtons(options.inline ? 'inline' : 'modal');
+
+        $toggles.on('change', 'input', function () {
+            var $input = $(this);
+            var name = $input.attr('name');
+
+            options[name] = name === 'inline' ? $input.data('value') : $input.prop('checked');
+            $images.viewer('destroy').viewer(options);
+            toggleButtons(options.inline ? 'inline' : 'modal');
+        });
 
     }]);
-
 
 })(window, window.angular);
 /**
@@ -207,11 +240,13 @@ $(document).ready(function() {
 (function(window, angular, undefined) {
     "use strict";
 
-    angular.module("rr.festivals", [
-        "rr.festivals.controllers"
+    angular.module("rr.gallery", [
+        "rr.gallery.controllers"
     ]);
 
 })(window, window.angular);
+
+
 /**
  * Created by kiran on 1/17/2016.
  */
@@ -263,6 +298,14 @@ $(document).ready(function() {
         $scope.selectedMenuItem = "POOJAS";
         $scope.pageData = "Hello poojas";
         console.log("hello");
+        $scope.poojas=[{header:"Maha sreechakrarajapooja", content: "Lorem ipsum hfsakh sfjahj  jj",imgSrc:"images/sreechakram.jpg"},
+            {header:"Sree rudranipooja", content: "Lorem ipsum hfsakh sfjahj  jj",imgSrc:"http://mdbootstrap.com/images/reg/reg%20(2).jpg"},
+            {header:"Maha pournamipooja", content: "gd gds hfsakh sfjahj  jj",imgSrc:"http://mdbootstrap.com/images/reg/reg%20(2).jpg"},
+            {header:"Sree vidyamahamanthrarchana", content: "vds ipsum hfsakh sfjahj  jj",imgSrc:"http://mdbootstrap.com/images/reg/reg%20(2).jpg"},
+            {header:"Sree mahaganapathyhomam", content: "Lorem ipsum hfsakh sfjahj  jj",imgSrc:"http://mdbootstrap.com/images/reg/reg%20(2).jpg"},
+            {header:"Sree bhagavathiseva", content: "Lorem gds hfsakh hssd  jj",imgSrc:"http://mdbootstrap.com/images/reg/reg%20(2).jpg"},
+            {header:"Maha mrithunjayahomam", content: "Lorem gds hfsakh hssd  jj",imgSrc:"http://mdbootstrap.com/images/reg/reg%20(2).jpg"},
+            {header:"Sarvalankarapooja", content: "Lorem gds hfsakh hssd  jj",imgSrc:"http://mdbootstrap.com/images/reg/reg%20(2).jpg"}];
 
 
     }]);

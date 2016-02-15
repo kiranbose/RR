@@ -1,5 +1,41 @@
-<div>
-    Poojas page
+<style>
+    #event-div-1{
+        background-image: url(images/sreechakram.jpg);
+        height: 600px;
+    }
+</style>
 
+<section>
+    <div class="container text-center main-events">
+        <br>
 
-</div>
+        <h3 class="event-head"><b>MAIN EVENTS</b></h3>
+
+        <div class="col-md-3" ng-repeat="pooja in poojas" >
+            <!--Image Card-->
+            <div class="card hoverable" style="height:300px;">
+                <div class="card-image">
+                    <div class="view overlay hm-white-slight z-depth-1">
+                        <img ng-src={{pooja.imgSrc}} class="img-responsive" alt="">
+                        <div class="mask waves-effect"></div>
+                    </div>
+                    <!--<span class="card-title">{{event.header}}</span>-->
+                </div>
+                <div class="card-content">
+                    <p>{{pooja.header}}</p>
+                </div>
+                <!--<div class="card-action">-->
+                <!--<a>This is a link</a>-->
+                <!--</div>-->
+            </div>
+            <!--Image Card-->
+        </div>
+    </div>
+    <section class="parallax" id="event-div-1">
+        <div class="parallax-content container-fluid text-center">
+            <h2 class="whiteText">{{poojas[0].header}}</h2>
+            <h5 class="whiteText">{{poojas[0].content}}</h5>
+            <button style="color: white;" type="button" class="btn btn-link" ui-sref="yagam">Read More</button>
+        </div>
+    </section>
+</section>

@@ -8,7 +8,7 @@
     var rrApp = angular.module('rrApp', ['ui.router',
         'rr.contact',
         'rr.events',
-        'rr.festivals',
+        'rr.gallery',
         'rr.home',
         'rr.poojas',
         'rr.yagam',
@@ -52,10 +52,10 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-40');
                 }
             })
-            .state('festivals', {
-                url: "/festivals",
-                templateUrl: "src/festivals/views/festivals.html",
-                controller: 'festivalsController',
+            .state('gallery', {
+                url: "/gallery",
+                templateUrl: "src/gallery/views/gallery.html",
+                controller: 'galleryController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-50');
                 },
@@ -117,5 +117,6 @@ $(document).ready(function() {
         });
 
 
-
 });
+
+

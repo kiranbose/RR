@@ -4,8 +4,9 @@
 (function(window, angular, undefined) {
     "use strict";
 
-    angular.module("rr.festivals", [
-        "rr.festivals.controllers"
+    angular.module("rr.gallery", [
+        "rr.gallery.controllers"
     ]);
 
 })(window, window.angular);
+

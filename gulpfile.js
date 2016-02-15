@@ -56,7 +56,8 @@ gulp.task('vendor', function () {
             gulpPaths.bc + 'angular-material-icons/angular-material-icons.js',
             gulpPaths.bc + 'angular-ui-router/release/angular-ui-router.js',
             gulpPaths.bc + 'angular-loading-bar/build/loading-bar.js',
-            gulpPaths.bc + 'angular-animate/angular-animate.js'
+            gulpPaths.bc + 'angular-animate/angular-animate.js',
+            gulpPaths.bc + 'imageviewer/dist/viewer.js'
         ])
         .pipe(plumber())
         .pipe(concat('vendor.js'))
@@ -69,7 +70,8 @@ gulp.task('vendor', function () {
     gulp.src([
             gulpPaths.bc + 'angular-loading-bar/build/loading-bar.css',
             gulpPaths.bc + 'font-awesome/css/font-awesome.min.css',
-            gulpPaths.bc + 'bootstrap/dist/css/bootstrap.css'
+            gulpPaths.bc + 'bootstrap/dist/css/bootstrap.css',
+            gulpPaths.bc + 'imageviewer/dist/viewer.css'
         ])
         .pipe(concat('vendor.css'))
         .pipe(gulp.dest(gulpPaths.app + '/css'))
