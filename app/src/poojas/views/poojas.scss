@@ -2,13 +2,18 @@
 
 .parallax {
   .parallax-content{
-    background-color: whitesmoke;
-    webkit-filter:brightness(20%);
-    h2{
+    background-color: navajowhite;
+    opacity: 0.6;
+    h3{
       color:black;
     }
     h5{
       color:black;
     }
   }
+}
+
+.transparent-back-white{
+    background-color: white;
+    opacity: 0.8;
 }
