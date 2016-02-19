@@ -328,14 +328,15 @@ html, body {
 
 /***********************************VIEWER JS pictures CSS end***********************************/
 .parallax .parallax-content {
-  background-color: navajowhite;
-  opacity: 0.6;
+  background-color: transparent;
+  text-shadow: 2px 2px black;
+  opacity: 0.8;
 }
 .parallax .parallax-content h3 {
-  color: black;
+  color: white;
 }
 .parallax .parallax-content h5 {
-  color: black;
+  color: white;
 }
 
 .transparent-back-white {

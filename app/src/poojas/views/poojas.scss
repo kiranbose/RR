@@ -2,13 +2,14 @@
 
 .parallax {
   .parallax-content{
-    background-color: navajowhite;
-    opacity: 0.6;
+    background-color: transparent;
+    text-shadow: 2px 2px black;
+    opacity: 0.8;
     h3{
-      color:black;
+      color:white;
     }
     h5{
-      color:black;
+      color:white;
     }
   }
 }

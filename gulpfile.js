@@ -169,7 +169,7 @@ gulp.task('bs-reload', function() {
 gulp.task('watch',function(){
     gulp.watch(['app/js/Controllers/*.js',
         'app/js/Directives/*.js',
-        //'app/src/**/*.js',
+        'app/src/**/*.js',
         'app/scss/**/*.scss',
         'app/src/**/*.scss',
         //'app/css/**/*.css',
@@ -188,5 +188,5 @@ gulp.task('default',['compass','scripts','browser-sync','watch','html'],function
         }
     });
     gulp.watch(['app/src/**/*.html'], ['bs-reload']);
-    gulp.watch(['app/src/**/*.js'], ['bs-reload']);
+
 });
