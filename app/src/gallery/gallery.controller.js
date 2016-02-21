@@ -7,7 +7,7 @@
     var rrFestivalsControllers = angular.module('rr.gallery.controllers', []);
 
     rrFestivalsControllers.controller('galleryController', ['$scope','$window',function ($scope,$window) {
-
+        $('html, body').animate({scrollTop: 0}, "slow");
     //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
     $scope.selectedMenuItem = "EVENTS";
     $scope.pageData = "Hello event";
@@ -50,19 +50,6 @@
             {imgsrc:'images/gallery/2.jpg',heading:'fffsafsd'},
             {imgsrc:'images/gallery/3.jpg',heading:'fdsf'},
             {imgsrc:'images/gallery/4.jpg',heading:'fdsf'},
-            //{imgsrc:'images/gallery/5.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/6.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/7.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/8.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/9.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/11.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/12.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/13.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/14.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/15.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/16.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/18.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/19.jpg',heading:'fsfas'},
             {imgsrc:'images/gallery/20.jpg',heading:'fsfas'}];
     }]);
 

@@ -145,12 +145,18 @@ $(document).ready(function() {
     var rrContactControllers = angular.module('rr.contact.controllers', []);
 
     rrContactControllers.controller('contactController', ['$scope','$window',function ($scope,$window) {
-
+    $('html, body').animate({scrollTop: 0}, "slow");
     //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
     $scope.selectedMenuItem = "CONTACTS";
     $scope.pageData = "Hello CONTACTS";
-    console.log("hello");
 
+        $scope.contacts = [
+            {name:"Sri. B.C Bose",desc:"The Acharya and the President",ph:"9447894916",imgSrc:"images/contacts/contact1.jpg"},
+            {name:"Sri. M. Padmalal",desc:"The Secretary",ph:"944556548",imgSrc:"images/contacts/contact2.jpg"},
+            {name:"Sri. N. Santhosh Kumar",desc:"The Treasurer",ph:"9747105777",imgSrc:"images/contacts/contact3.jpg"},
+            {name:"Sri. D. Biju",desc:"President (SRDP)",subDesc:"Sree Rajarajeswari Devi Dharma Paripalana Sangham",ph:"9995553344",imgSrc:"images/contacts/contact4.jpg"},
+            {name:"Sri. R. Vinod",desc:"Vedaadhyayi",subDesc:"(Vedic Teacher)",ph:"9446357645",imgSrc:"images/contacts/contact5.jpg"}
+        ];
 
     }]);
 
@@ -176,7 +182,7 @@ $(document).ready(function() {
     var rrEventsControllers = angular.module('rr.events.controllers', []);
 
     rrEventsControllers.controller('eventsController', ['$scope','$window',function ($scope,$window) {
-
+    $('html, body').animate({scrollTop: 0}, "slow");
     //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
     $scope.selectedMenuItem = "EVENTS";
     $scope.pageData = "Hello event";
@@ -207,7 +213,7 @@ $(document).ready(function() {
     var rrFestivalsControllers = angular.module('rr.gallery.controllers', []);
 
     rrFestivalsControllers.controller('galleryController', ['$scope','$window',function ($scope,$window) {
-
+        $('html, body').animate({scrollTop: 0}, "slow");
     //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
     $scope.selectedMenuItem = "EVENTS";
     $scope.pageData = "Hello event";
@@ -250,19 +256,6 @@ $(document).ready(function() {
             {imgsrc:'images/gallery/2.jpg',heading:'fffsafsd'},
             {imgsrc:'images/gallery/3.jpg',heading:'fdsf'},
             {imgsrc:'images/gallery/4.jpg',heading:'fdsf'},
-            //{imgsrc:'images/gallery/5.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/6.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/7.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/8.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/9.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/11.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/12.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/13.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/14.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/15.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/16.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/18.jpg',heading:'fsfas'},
-            //{imgsrc:'images/gallery/19.jpg',heading:'fsfas'},
             {imgsrc:'images/gallery/20.jpg',heading:'fsfas'}];
     }]);
 
@@ -325,26 +318,63 @@ $(document).ready(function() {
     "use strict";
     var rrPoojasControllers = angular.module('rr.poojas.controllers', []);
 
-    rrPoojasControllers.controller('poojasController', ['$scope','$window',function ($scope,$window) {
+    rrPoojasControllers.controller('poojasController', ['$scope', '$window', function ($scope, $window) {
 
         //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
+        $('html, body').animate({
+            scrollTop: 0
+        }, "slow");
         $scope.selectedMenuItem = "POOJAS";
         $scope.pageData = "Hello poojas";
         console.log("hello");
-        $scope.poojas=[{header:"Maha Sreechakraraja Pooja", content: "Mahasreechakrarajapooja followed by Mahachandikahomam (The greatest pooja getting complete result of all poojas) held once a year in September, October only. Sreechakrams and sreepathakkams in gold, gold plated, silver and copper can be had during this time.",imgSrc:"images/sreechakram.jpg"},
-            {header:"Sree Rudrani Pooja", content: "Sreerudranipooja (for getting all ambitions fulfilled) held on every Sunday followed by gift of food.",imgSrc:"images/poojas/p1.jpg"},
-            {header:"Maha Pournami Pooja", content: "The most powerful pooja that avoids all the evil influence and brings happiness. The pooja is held on every full moon day.",imgSrc:"images/poojas/p2.png"},
-            {header:"Sree Vidyamahamanthrarchana", content: "For students getting higher position through education. This pooja is held on every Wednesday, Sunday and full moon day.",imgSrc:"images/poojas/p3.jpg"},
-            {header:"Sree Mahaganapathy Homam", content: "For getting rid of all obstacles and getting Ashtaiswaryas. This pooja is held everyday.",imgSrc:"images/poojas/p4.jpg"},
-            {header:"Sree Bhagavathiseva", content: "For getting Sreedevi’s blessing. This pooja is held everyday.",imgSrc:"images/poojas/p5.jpg"},
-            {header:"Maha Mrithunjaya Homam", content: "Mahamrithunjayahomam (surpassing death and getting vitality) held on the first Monday of every Malayalam month. Gift of Food (for getting Mukthi – Salvation) held on every Sunday and on full moon day.",imgSrc:"images/poojas/p6.jpg"},
-            {header:"Sarvalankarapooja", content: "Lorem gds hfsakh hssd  jj",imgSrc:"images/poojas/p7.jpg"}];
+        $scope.poojas = [{
+                header: "Maha Sreechakraraja Pooja",
+                content: "Mahasreechakrarajapooja followed by Mahachandikahomam (The greatest pooja getting complete result of all poojas) held once a year in September, October only. Sreechakrams and sreepathakkams in gold, gold plated, silver and copper can be had during this time.",
+                imgSrc: "images/sreechakram.jpg"
+            },
+            {
+                header: "Sree Rudrani Pooja",
+                content: "Sreerudranipooja (for getting all ambitions fulfilled) held on every Sunday followed by gift of food.",
+                imgSrc: "images/poojas/p1.jpg"
+            },
+            {
+                header: "Maha Pournami Pooja",
+                content: "The most powerful pooja that avoids all the evil influence and brings happiness. The pooja is held on every full moon day.",
+                imgSrc: "images/poojas/p2.png"
+            },
+            {
+                header: "Sree Vidyamahamanthrarchana",
+                content: "For students getting higher position through education. This pooja is held on every Wednesday, Sunday and full moon day.",
+                imgSrc: "images/poojas/p3.jpg"
+            },
+            {
+                header: "Sree Mahaganapathy Homam",
+                content: "For getting rid of all obstacles and getting Ashtaiswaryas. This pooja is held everyday.",
+                imgSrc: "images/poojas/p4.jpg"
+            },
+            {
+                header: "Sree Bhagavathiseva",
+                content: "For getting Sreedevi’s blessing. This pooja is held everyday.",
+                imgSrc: "images/poojas/p5.jpg"
+            },
+            {
+                header: "Maha Mrithunjaya Homam",
+                content: "Mahamrithunjayahomam (surpassing death and getting vitality) held on the first Monday of every Malayalam month. Gift of Food (for getting Mukthi – Salvation) held on every Sunday and on full moon day.",
+                imgSrc: "images/poojas/p6.jpg"
+            },
+            {
+                header: "Sarvalankarapooja",
+                content: "Lorem gds hfsakh hssd  jj",
+                imgSrc: "images/poojas/p7.jpg"
+            }];
 
-        $scope.scrollToDiv = function(index){
+        $scope.scrollToDiv = function (index) {
             console.log("scrolling");
-            var divPosition = $('#pooja-div-'+(index+1)).offset();
-                console.log("divpost",divPosition);
-            $('html, body').animate({scrollTop: divPosition.top-100}, "slow");
+            var divPosition = $('#pooja-div-' + (index + 1)).offset();
+            console.log("divpost", divPosition);
+            $('html, body').animate({
+                scrollTop: divPosition.top - 100
+            }, "slow");
         }
 
     }]);
@@ -371,11 +401,12 @@ $(document).ready(function() {
     var rrYagamControllers = angular.module('rr.yagam.controllers', []);
 
     rrYagamControllers.controller('yagamController', ['$scope','$window',function ($scope,$window) {
-
+        $('html, body').animate({scrollTop: 0}, "slow");
         //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
         $scope.selectedMenuItem = "YAGaM";
         $scope.pageData = "Hello YAGaM";
         console.log("hello");
+        $scope.yagamDates = [18,19,20,21,22];
 
 
     }]);

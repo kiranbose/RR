@@ -7,7 +7,7 @@
     var rrEventsControllers = angular.module('rr.events.controllers', []);
 
     rrEventsControllers.controller('eventsController', ['$scope','$window',function ($scope,$window) {
-
+    $('html, body').animate({scrollTop: 0}, "slow");
     //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
     $scope.selectedMenuItem = "EVENTS";
     $scope.pageData = "Hello event";
