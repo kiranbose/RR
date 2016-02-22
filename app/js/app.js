@@ -162,6 +162,7 @@ $(document).ready(function() {
 
 
 })(window, window.angular);
+
 /**
  * Created by kiran on 1/17/2016.
  */
@@ -193,6 +194,7 @@ $(document).ready(function() {
 
 
 })(window, window.angular);
+
 /**
  * Created by kiran on 1/17/2016.
  */
@@ -260,6 +262,7 @@ $(document).ready(function() {
     }]);
 
 })(window, window.angular);
+
 /**
  * Created by kiran on 1/17/2016.
  */
@@ -381,6 +384,7 @@ $(document).ready(function() {
 
 
 })(window, window.angular);
+
 /**
  * Created by kiran on 1/17/2016.
  */
@@ -413,6 +417,7 @@ $(document).ready(function() {
 
 
 })(window, window.angular);
+
 /**
  * Created by kiran on 1/17/2016.
  */
