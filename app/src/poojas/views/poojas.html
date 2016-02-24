@@ -35,6 +35,26 @@
         max-width: 100%;
         }
 
+    .whitebg{
+        overflow: hidden;
+        padding: 20px 20px 10px;
+        position: relative;
+        z-index: 5;
+        background-color: #fff;
+        background-image: url(images/poojas/p6-blur.jpg);
+        box-shadow: 2px 2px 9px 0 rgba(0,0,0,.5);
+    }
+    .whitebg::before {
+        bottom: -10px;
+        display: block;
+        left: -10px;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        z-index: -1;
+        background: inherit;
+        /*-webkit-filter: blur(2px);*/
+    }
     @media (max-width: 768px) {
         #pooja-div-2{
             background-image: url(images/poojas/p1.jpg);
@@ -87,9 +107,9 @@
 
         <div class="col-md-3 wow fadeInUp" ng-repeat="pooja in poojas" >
             <!--Image Card-->
-            <div class="card hoverable" ng-click="scrollToDiv($index)" style="height:300px;">
+            <div class="card hoverable" ng-click="scrollToDiv($index)" style="height:260px;">
                 <div class="card-image">
-                    <div class="view overlay hm-orange-light z-depth-1" style="height: 180px;">
+                    <div class="view overlay hm-orange-light z-depth-1" style="height: 160px;">
                         <img ng-src={{pooja.imgSrc}} class="img-responsive" alt="" >
                         <div class="mask waves-effect"></div>
                     </div>
@@ -199,11 +219,11 @@
     </section>
 
     <section class="parallax wow fadeInUp" id="pooja-div-7">
-        <div class="parallax-content container-fluid text-center">
-            <h3 class="whiteText">{{poojas[6].header}}</h3>
+        <div class="container text-center whitebg">
+            <h4 class="whiteText">{{poojas[6].header}}</h4>
             <hr>
             <div class="container">
-                <h5 class="whiteText">{{poojas[6].content}}</h5>
+                <p class="whiteText">{{poojas[6].content}}</p>
             </div>
             <br><br>
             <!--<button style="color: black;" type="button" class="btn btn-link">Read More</button>-->
