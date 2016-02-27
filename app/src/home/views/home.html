@@ -29,10 +29,17 @@
         -o-transition: all 500ms ease;
         -webkit-transition:all 500ms ease;
     }
-    #historydiv{
+    #deviDiv{
         background-image: url(images/tem.jpg);
 
         min-height: 500px;
+    }
+    @media (max-width: 768px) {
+        #deviDiv{
+            background-image: url(images/temsmaller.jpg);
+
+            min-height: 500px;
+        }
     }
     #Yagamdiv{
         background-image: url(images/yagam.jpg);
@@ -42,81 +49,81 @@
 
 </style>
 <div class="slide">
-    <div id="myCarousel" class="carousel slide carousel-fade hoverable"   data-ride="carousel" >
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
+        <div id="myCarousel" class="carousel slide carousel-fade hoverable"   data-ride="carousel" >
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
 
-        <!-- Wrapper for slides -->
-        <div id="rrCarousel" class="carousel-inner  z-depth-2" role="listbox" style="height: 300px;">
-            <div class="item active">
-                <div class="view overlay hm-blue-slight">
-                    <a><img src="images/carousel1.jpg" class="img-responsive" alt="slide1">
-                        <div class="mask waves-effect waves-light"></div>
-                    </a>
-                    <div class="carousel-caption hidden-xs">
-                        <div class="animated fadeInDown">
-                            <h5>Om Sarva Mangala Kalyanyey</h5>
+            <!-- Wrapper for slides -->
+            <div id="rrCarousel" class="carousel-inner  z-depth-2" role="listbox" style="height: 300px;">
+                <div class="item active">
+                    <div class="view overlay hm-blue-slight">
+                        <a><img src="images/carousel1.jpg" class="img-responsive" alt="slide1">
+                            <div class="mask waves-effect waves-light"></div>
+                        </a>
+                        <div class="carousel-caption hidden-xs">
+                            <div class="animated fadeInDown">
+                                <h5>Om Sarva Mangala Kalyanyey</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="item">
-                <div class="view overlay hm-blue-slight">
-                    <a><img src="images/carousel2.jpg" class="img-responsive" alt="Chania">
-                        <div class="mask waves-effect waves-light"></div>
-                    </a>
-                    <div class="carousel-caption hidden-xs">
-                        <div class="animated fadeInDown">
-                            <h5>Ashta Drishtikey Vishaley Vijaye</h5>
+                <div class="item">
+                    <div class="view overlay hm-blue-slight">
+                        <a><img src="images/carousel2.jpg" class="img-responsive" alt="Chania">
+                            <div class="mask waves-effect waves-light"></div>
+                        </a>
+                        <div class="carousel-caption hidden-xs">
+                            <div class="animated fadeInDown">
+                                <h5>Ashta Drishtikey Vishaley Vijaye</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="item">
-                <div class="view overlay hm-blue-slight">
-                    <a><img src="images/carousel3.jpg" class="img-responsive" alt="Chania">
-                        <div class="mask waves-effect waves-light"></div>
-                    </a>
-                    <div class="carousel-caption hidden-xs">
-                        <div class="animated fadeInDown">
-                            <h5>Kripa Pravahinii dharey madhurey</h5>
+                <div class="item">
+                    <div class="view overlay hm-blue-slight">
+                        <a><img src="images/carousel3.jpg" class="img-responsive" alt="Chania">
+                            <div class="mask waves-effect waves-light"></div>
+                        </a>
+                        <div class="carousel-caption hidden-xs">
+                            <div class="animated fadeInDown">
+                                <h5>Kripa Pravahinii dharey madhurey</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="item">
-                <div class="view overlay hm-blue-slight">
-                    <a><img src="images/carousel4.jpg" class="img-responsive" alt="Chania">
-                        <div class="mask waves-effect waves-light"></div>
-                    </a>
-                    <div class="carousel-caption hidden-xs">
-                        <div class="animated fadeInDown">
-                            <h5>Shive sree raja rajesjhwarye nama:</h5>
+                <div class="item">
+                    <div class="view overlay hm-blue-slight">
+                        <a><img src="images/carousel4.jpg" class="img-responsive" alt="Chania">
+                            <div class="mask waves-effect waves-light"></div>
+                        </a>
+                        <div class="carousel-caption hidden-xs">
+                            <div class="animated fadeInDown">
+                                <h5>Shive sree raja rajesjhwarye nama:</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
+            <!-- Left and right controls -->
+            <a class="left carousel-control new-control wow fadeInLeft" href="#myCarousel" role="button" data-slide="prev">
+                <span class="fa fa fa-angle-left waves-effect waves-light"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control new-control  wow fadeInRight" href="#myCarousel" role="button" data-slide="next">
+                <span class="fa fa fa-angle-right waves-effect waves-light"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control new-control wow fadeInLeft" href="#myCarousel" role="button" data-slide="prev">
-            <span class="fa fa fa-angle-left waves-effect waves-light"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control new-control  wow fadeInRight" href="#myCarousel" role="button" data-slide="next">
-            <span class="fa fa fa-angle-right waves-effect waves-light"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
 
     <div class="container-fluid text-center homesection1">
 
@@ -146,10 +153,11 @@
 
     </div>
     <br><br>
-    <section class="parallax wow fadeInUp" id="historydiv">
+    <section class="parallax wow fadeInUp" id="deviDiv">
         <div class="container text-center">
             <h2>DEVI</h2>
-            <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</h5>
+            <br><br><br><br><br><br><br><br>
+            <h5>sfafas fsa f</h5>
             <button type="button" class="btn btn-link" data-target="#historyModal" data-toggle="modal" style="color: white;">Read More</button>
         </div>
         <div class="modal fade" id="historyModal" role="dialog">

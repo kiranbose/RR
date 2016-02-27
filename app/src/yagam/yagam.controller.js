@@ -15,6 +15,23 @@
         $scope.yagamDates = [18,19,20,21,22];
 
 
+        $scope.announcements = [
+            {
+                head: 'Announcement1',
+                desc: 'desc jfhskafh kfhksa fh ffsaj fmj'
+            },{
+                head: 'Announcement2',
+                desc: 'desc jfhskafh kfhksa fh ffsaj fmj'
+            },{
+                head: 'Announcement3',
+                desc: 'desc jfhskafh kfhksa fh ffsaj fmj'
+            },{
+                head: 'Announcement4',
+                desc: 'desc jfhskafh kfhksa fh ffsaj fmj'
+            }
+        ];
+
+
     }]);
 
 
