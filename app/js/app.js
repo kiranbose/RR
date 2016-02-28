@@ -419,17 +419,21 @@ $(document).ready(function() {
 
         $scope.announcements = [
             {
-                head: 'Announcement1',
-                desc: 'desc jfhskafh kfhksa fh ffsaj fmj'
+                head: 'Inauguration',
+                desc: 'Mookambika thanthri Ninthyananda Adiga & His wife Rakshitha adiga have visited Kollam Kadappakkada Vadakkekunnathu Sree Rajarajeswari Devi Temple for the preparation of Yaga Mandam and everything to do the best',
+                imgSrc:'images/yagam/announcements/a1.jpg'
             },{
-                head: 'Announcement2',
-                desc: 'desc jfhskafh kfhksa fh ffsaj fmj'
+                head: 'Gift of Food',
+                desc: 'Food will be served on all 5 days of yagam in temple. Devotees interested in sponsoring Annadaanam can contact temple and book at the earliest. Availability depends.',
+                imgSrc:'images/yagam/announcements/banner.jpg'
             },{
                 head: 'Announcement3',
-                desc: 'desc jfhskafh kfhksa fh ffsaj fmj'
+                desc: 'desc jfhskafh kfhksa fh ffsaj fmj',
+                imgSrc:'images/yagam/announcements/banner.jpg'
             },{
                 head: 'Announcement4',
-                desc: 'desc jfhskafh kfhksa fh ffsaj fmj'
+                desc: 'desc jfhskafh kfhksa fh ffsaj fmj',
+                imgSrc:'images/yagam/announcements/banner.jpg'
             }
         ];
 

@@ -5,7 +5,7 @@
     }
     .yagam-div-1 h4,p{
         color:white;
-        margin-top: 5%;
+        /*margin-top: 5%;*/
         font-weight: 400;
     }
     .date-box{
@@ -52,8 +52,48 @@
         color:black;
         font-size:medium;
     }
-    #carousel1{
+
+    #yagamCarousel, #rrCarousel{
         min-height:300px;
+    }
+    .carousel .carousel-indicators .active{
+        background-color: darkgray !important;
+    }
+    .pulldown{
+        margin-top: 100px;
+        width: 100%;
+        height: 100%;
+    }
+    .carousel-image{
+        height: 300px;
+    }
+    .carousel-caption{
+        float: right;
+        margin-left: 30%;
+        right: 0;
+        width: 500px;
+    }
+
+    @media (max-width: 768px) {
+        .pulldown{
+            margin-top: 50%;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-caption{
+            float: left !important;
+            left: 0;
+            right: 0;
+            margin: auto !important;
+            width: auto !important;
+        }
+        .carousel-caption p , .carousel-caption h4{
+            color:white !important;
+        }
+        .carousel-image{
+            -webkit-filter: brightness(30%);
+            filter: brightness(30%);
+        }
     }
 </style>
 
@@ -86,9 +126,6 @@
     </div>
 </div>
 
-<div>
-
-</div>
 
 <div class="container-fluid yagam-div-2 wow slideInUp">
     <div class="container text-center">
@@ -121,6 +158,45 @@
         </div>
     </div>
 </div>
+
+
+<div id="yagamCarousel" class="carousel slide carousel-fade hoverable"   data-ride="carousel" >
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#yagamCarousel" style="border:1px solid grey" data-slide-to="{{$index}}" ng-class="{'active' : $index == 0}" ng-repeat="announcement in announcements"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div id="rrCarousel" class="carousel-inner  z-depth-2" role="listbox">
+            <div class="item" ng-repeat="announcement in announcements" ng-class=" $index == 0 ? 'active' : ''" >
+                <div class="view">
+                    <a><img class="carousel-image" ng-src="{{announcement.imgSrc}}" class="img-responsive pulldown" alt="slide1">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                    <div class="carousel-caption">
+                        <div class="animated fadeInUp">
+                            <h4 class="blackText">{{announcement.head}}</h4>
+                            <p style="color:slategray; text-shadow: none;">{{announcement.desc}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control new-control wow fadeInLeft" role="button" data-slide="prev">
+        <span class="fa fa fa-angle-left waves-effect waves-light"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control new-control  wow fadeInRight" role="button" data-slide="next">
+        <span class="fa fa fa-angle-right waves-effect waves-light"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+
 
 
 <div class="container-fluid yagam-div-3">
