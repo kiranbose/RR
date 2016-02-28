@@ -131,6 +131,9 @@ $(document).ready(function() {
         }
     );
     wow.init();
+    $('body').on('click','.carousel-control',function() {
+        $(this).closest('.carousel').carousel( $(this).data('slide') );
+    });
 
 });
 

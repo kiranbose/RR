@@ -131,6 +131,9 @@ $(document).ready(function() {
         }
     );
     wow.init();
+    $('body').on('click','.carousel-control',function() {
+        $(this).closest('.carousel').carousel( $(this).data('slide') );
+    });
 
 });
 
@@ -297,6 +300,7 @@ $(document).ready(function() {
             {Name:'Dev4',imageSrc:'images/round/r4.jpg',text:'majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable'},
             {Name:'Dev5',imageSrc:'images/round/r5.jpg',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
            ];
+
 
     }]);
 
