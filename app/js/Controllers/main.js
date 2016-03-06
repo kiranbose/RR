@@ -30,8 +30,8 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-20');
                 }
             })
-            .state('events', {
-                url: "/events",
+            .state('info', {
+                url: "/information",
                 templateUrl: "src/events/views/events.html",
                 controller: 'eventsController',
                 onEnter: function() {

@@ -30,8 +30,8 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-20');
                 }
             })
-            .state('events', {
-                url: "/events",
+            .state('info', {
+                url: "/information",
                 templateUrl: "src/events/views/events.html",
                 controller: 'eventsController',
                 onEnter: function() {
@@ -294,11 +294,12 @@ $(document).ready(function() {
         $scope.pageData = "Hello HOME";
         console.log("hello");
 
-        $scope.upaDevatas = [{Name:'Dev1',imageSrc:'images/round/r1.gif',text:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'},
-            {Name:'Dev2',imageSrc:'images/round/r2.jpg',text:'majority have suffered alteration in some form, by injected humoure'},
-            {Name:'Dev3',imageSrc:'images/round/r3.jpg',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-            {Name:'Dev4',imageSrc:'images/round/r4.jpg',text:'majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable'},
-            {Name:'Dev5',imageSrc:'images/round/r5.jpg',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+        $scope.upaDevatas = [{Name:'Muthappan',imageSrc:'images/round/r1.gif',text:''},
+            {Name:'Yogeeswaran',imageSrc:'images/round/r2.jpg',text:''},
+            {Name:'NagaRaja',imageSrc:'images/round/r3.jpg',text:''},
+            {Name:'Naga YakshiAmma',imageSrc:'images/round/r4.jpg',text:''},
+            {Name:'Naga Kanyaka',imageSrc:'images/round/r5.jpg',text:''},
+            {Name:'Bhrahmarakshass',imageSrc:'images/round/r5.jpg',text:''},
            ];
 
 
@@ -371,8 +372,8 @@ $(document).ready(function() {
             },
             {
                 header: "Sarvalankarapooja",
-                content: "Lorem gds hfsakh hssd  jj",
-                imgSrc: "images/poojas/p7.jpg"
+                content: "Sarvalankarapooja (The sublime pooja followed by eighteen poojas) held on special occasions in which the goddess is pleased and bestows all the blessings on the devotees. Abhishekas like Kalashabhishekam, Kalabhabhishekam, Kumkuma abhishekam, Elaneerabhishekam, Pushpabhishekam, Neyyabhishekam, Panchamrithaabhishekam held on Sunday, full moon day and on special occasions (curing all diseases and getting mental happiness) Sreemahathripurasundareehomam the supreme pooja held on special occasions gives the devotees victory in all walks of life. Surppapooja, Surppabali and Nagaroottu held once in a month on Aayilyam star and on festival. This poojas saves the devotees from snake curse. Neerajanapooja held everyday and on festival (the pooja saves the devotees from all the evil influence of starts) Mangalyasoubhagyapooja, Muthappanoottu, Sreesooktham, Purushasooktham, Sudhasooktham, and Navagrahapoojas are among the great many poojas held here. Special 10 days’ poojas are conducted marking Mahanavami and Vijayadasami. Vidhyarambham (initiation into letters) As the Goddess is Sreevidhya, the embodiment of wisdom (Vidhyarambham) initiation into letters is the most prominent ritual here and it is conducted on Vijayadasami day followed by 10 days’ successive poojas, homas and japas. Great scriptures, hymns and Vedas are red sung and chanted here with utmost piety marking all the worshipful seasons.",
+                imgSrc: "images/poojas/p7-icon.jpg"
             }];
 
         $scope.scrollToDiv = function (index) {
@@ -419,23 +420,56 @@ $(document).ready(function() {
 
         $scope.announcements = [
             {
-                head: 'Inauguration',
+                head: 'GayathriYagam Announcement ',
                 desc: 'Mookambika thanthri Ninthyananda Adiga & His wife Rakshitha adiga have visited Kollam Kadappakkada Vadakkekunnathu Sree Rajarajeswari Devi Temple for the preparation of Yaga Mandam and everything to do the best',
                 imgSrc:'images/yagam/announcements/a1.jpg'
             },{
                 head: 'Gift of Food',
                 desc: 'Food will be served on all 5 days of yagam in temple. Devotees interested in sponsoring Annadaanam can contact temple and book at the earliest. Availability depends.',
-                imgSrc:'images/yagam/announcements/banner.jpg'
+                imgSrc:'images/yagam/annadanam.jpg'
             },{
-                head: 'Announcement3',
-                desc: 'desc jfhskafh kfhksa fh ffsaj fmj',
-                imgSrc:'images/yagam/announcements/banner.jpg'
-            },{
-                head: 'Announcement4',
-                desc: 'desc jfhskafh kfhksa fh ffsaj fmj',
-                imgSrc:'images/yagam/announcements/banner.jpg'
+                head: 'MahaGayathriYaga Karyakarthra yogam',
+                desc: 'Kerala High Court justice Honorable Mr. K K Utharan inaugurating the ceremony',
+                imgSrc:'images/yagam/announcements/a3.jpg'
             }
+            //,{
+            //    head: 'Annadanam',
+            //    desc: 'Annadanam will be held as a part of MahaGayathri Yagam. Devotees wishing to host a days annadanam can contact us',
+            //    imgSrc:'images/yagam/annadanam.jpg'
+            //}
         ];
+        var $images = $('.docs-pictures');
+        var $toggles = $('.docs-toggles');
+        var $buttons = $('.docs-buttons');
+        var options = {
+            // inline: true,
+            rotatable: false,
+            url: 'data-original',
+
+        };
+
+        function toggleButtons(mode) {
+            if (/modal|inline|none/.test(mode)) {
+                $buttons.
+                find('button[data-enable]').
+                prop('disabled', true).
+                filter('[data-enable*="' + mode + '"]').
+                prop('disabled', false);
+            }
+        }
+
+        $images.viewer(options);
+
+        toggleButtons(options.inline ? 'inline' : 'modal');
+
+        $toggles.on('change', 'input', function () {
+            var $input = $(this);
+            var name = $input.attr('name');
+
+            options[name] = name === 'inline' ? $input.data('value') : $input.prop('checked');
+            $images.viewer('destroy').viewer(options);
+            toggleButtons(options.inline ? 'inline' : 'modal');
+        });
 
 
     }]);

@@ -52,8 +52,8 @@
             },
             {
                 header: "Sarvalankarapooja",
-                content: "Lorem gds hfsakh hssd  jj",
-                imgSrc: "images/poojas/p7.jpg"
+                content: "Sarvalankarapooja (The sublime pooja followed by eighteen poojas) held on special occasions in which the goddess is pleased and bestows all the blessings on the devotees. Abhishekas like Kalashabhishekam, Kalabhabhishekam, Kumkuma abhishekam, Elaneerabhishekam, Pushpabhishekam, Neyyabhishekam, Panchamrithaabhishekam held on Sunday, full moon day and on special occasions (curing all diseases and getting mental happiness) Sreemahathripurasundareehomam the supreme pooja held on special occasions gives the devotees victory in all walks of life. Surppapooja, Surppabali and Nagaroottu held once in a month on Aayilyam star and on festival. This poojas saves the devotees from snake curse. Neerajanapooja held everyday and on festival (the pooja saves the devotees from all the evil influence of starts) Mangalyasoubhagyapooja, Muthappanoottu, Sreesooktham, Purushasooktham, Sudhasooktham, and Navagrahapoojas are among the great many poojas held here. Special 10 days’ poojas are conducted marking Mahanavami and Vijayadasami. Vidhyarambham (initiation into letters) As the Goddess is Sreevidhya, the embodiment of wisdom (Vidhyarambham) initiation into letters is the most prominent ritual here and it is conducted on Vijayadasami day followed by 10 days’ successive poojas, homas and japas. Great scriptures, hymns and Vedas are red sung and chanted here with utmost piety marking all the worshipful seasons.",
+                imgSrc: "images/poojas/p7-icon.jpg"
             }];
 
         $scope.scrollToDiv = function (index) {

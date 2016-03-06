@@ -6,3 +6,14 @@
     font-size: x-large;
   }
 }
+
+
+.collection{
+  border: 1px solid transparent;
+    .collection-item{
+      border-bottom: 1px solid whitesmoke;
+    }
+  a{
+    color:black !important;
+  }
+}

@@ -10,7 +10,7 @@
 .homesection1 #storyhead {
   font-size: x-large;
 }
-.homesection1 #storyhead4 {
+.homesection1 .storyhead4 {
   color: #926318;
   font-size: medium;
 }
@@ -64,6 +64,10 @@
 .upadevatasdiv .panel-body p {
   font-size: large;
   color: #926318;
+}
+
+footer.page-footer {
+  margin-top: 0px !important;
 }
 
 .maindiv {
@@ -273,6 +277,16 @@ html, body {
 
 .main-events .event-head {
   font-size: x-large;
+}
+
+.collection {
+  border: 1px solid transparent;
+}
+.collection .collection-item {
+  border-bottom: 1px solid whitesmoke;
+}
+.collection a {
+  color: black !important;
 }
 
 /* Content */
