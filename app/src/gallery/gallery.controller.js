@@ -51,6 +51,16 @@
             {imgsrc:'images/gallery/3.jpg',heading:'fdsf'},
             {imgsrc:'images/gallery/4.jpg',heading:'fdsf'},
             {imgsrc:'images/gallery/20.jpg',heading:'fsfas'}];
+
+
+        $scope.download= function(file){
+            //window.location.href = $scope.downloadLink;
+            //window.open($scope.downloadLink);
+            var link = document.createElement("a");
+            link.download = file;
+            link.href = file;
+            link.click();
+        };
     }]);
 
 })(window, window.angular);
