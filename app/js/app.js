@@ -30,10 +30,10 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-20');
                 }
             })
-            .state('info', {
-                url: "/information",
-                templateUrl: "src/events/views/events.html",
-                controller: 'eventsController',
+            .state('poojas', {
+                url: "/poojas",
+                templateUrl: "src/poojas/views/poojas.html",
+                controller: 'poojasController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-30');
                 },
@@ -41,10 +41,10 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-30');
                 }
             })
-            .state('poojas', {
-                url: "/poojas",
-                templateUrl: "src/poojas/views/poojas.html",
-                controller: 'poojasController',
+            .state('gallery', {
+                url: "/gallery",
+                templateUrl: "src/gallery/views/gallery.html",
+                controller: 'galleryController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-40');
                 },
@@ -52,10 +52,10 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-40');
                 }
             })
-            .state('gallery', {
-                url: "/gallery",
-                templateUrl: "src/gallery/views/gallery.html",
-                controller: 'galleryController',
+            .state('info', {
+                url: "/information",
+                templateUrl: "src/events/views/events.html",
+                controller: 'eventsController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-50');
                 },
@@ -63,10 +63,11 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-50');
                 }
             })
-            .state('contact', {
-                url: "/contact",
-                templateUrl: "src/contact/views/contact.html",
-                controller: 'contactController',
+
+            .state('yagam', {
+                url: "/yagam",
+                templateUrl: "src/yagam/views/yagam.html",
+                controller: 'yagamController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-60');
                 },
@@ -74,17 +75,17 @@
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-60');
                 }
             })
-            .state('yagam', {
-            url: "/yagam",
-            templateUrl: "src/yagam/views/yagam.html",
-            controller: 'yagamController',
+            .state('contact', {
+                url: "/contact",
+                templateUrl: "src/contact/views/contact.html",
+                controller: 'contactController',
                 onEnter: function() {
                     angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-70');
                 },
                 onExit: function() {
                     angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-70');
                 }
-        });
+            });
 
     }]);
 
@@ -92,11 +93,13 @@
 
 $(document).ready(function() {
 
+
+
     $(window).scroll(function () {
         //if you hard code, then use console
         //.log to determine when you want the
         //nav bar to stick.
-        console.log($(window).scrollTop());
+        //console.log($(window).scrollTop());
         if ($(window).scrollTop() > 230) {
             $('#nav_bar').addClass('rrnavbar-fixed');
             $('#brand_logo_minimized').removeClass('hidden');
@@ -330,11 +333,15 @@ $(document).ready(function() {
     var rrHomeControllers = angular.module('rr.home.controllers', []);
 
     rrHomeControllers.controller('homeController', ['$scope','$window',function ($scope,$window) {
+        $('html, body').animate({scrollTop: 0}, "slow");
 
+        $('.carousel').carousel({
+            interval: 4000
+        });
         //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
         $scope.selectedMenuItem = "HOME";
         $scope.pageData = "Hello HOME";
-        console.log("hello");
+        console.log("Howdy.. geek. \n Drop a mail to kiranbose@gmail.com for any queries. \n May the Force be with you !");
 
         $scope.upaDevatas = [{Name:'Muthappan',imageSrc:'images/round/r1.gif',text:''},
             {Name:'Yogeeswaran',imageSrc:'images/round/r2.jpg',text:''},
@@ -513,7 +520,9 @@ $(document).ready(function() {
             toggleButtons(options.inline ? 'inline' : 'modal');
         });
 
-
+        $('.carousel').carousel({
+            interval: 4000
+        });
     }]);
 
 

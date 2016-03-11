@@ -68,7 +68,9 @@
             toggleButtons(options.inline ? 'inline' : 'modal');
         });
 
-
+        $('.carousel').carousel({
+            interval: 4000
+        });
     }]);
 
 

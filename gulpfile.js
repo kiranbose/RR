@@ -134,8 +134,10 @@ gulp.task('build:remove',['build:copy'],function(cb){
     ],cb);
 });
 
+
+
 // Run the build task to create production build
-gulp.task('build',['build:copy','build:remove']);
+gulp.task('build',['build:cleanfolder','build:copy','build:remove']);
 
 
 // ///////////////////////////////////////////////////////////////////
