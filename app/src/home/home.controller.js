@@ -10,7 +10,7 @@
         $('html, body').animate({scrollTop: 0}, "slow");
 
         $('.carousel').carousel({
-            interval: 4000
+            interval: 3000
         });
         //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
         $scope.selectedMenuItem = "HOME";

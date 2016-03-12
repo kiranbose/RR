@@ -55,6 +55,27 @@
         background: inherit;
         /*-webkit-filter: blur(2px);*/
     }
+
+    .custom-bg{
+        overflow: hidden;
+        padding: 20px 20px 10px;
+        position: relative;
+        z-index: 5;
+        background-color: #fff;
+        background-image: url(images/poojas/p8.jpg);
+        box-shadow: 2px 2px 9px 0 rgba(0,0,0,.5);
+    }
+    .custom-bg::before {
+        bottom: -10px;
+        display: block;
+        left: -10px;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        z-index: -1;
+        background: inherit;
+        /*-webkit-filter: blur(2px);*/
+    }
     @media (max-width: 768px) {
         #pooja-div-2{
             background-image: url(images/poojas/p1.jpg);
@@ -224,6 +245,18 @@
             <hr>
             <div class="container">
                 <p class="whiteText">{{poojas[6].content}}</p>
+            </div>
+            <br><br>
+            <!--<button style="color: black;" type="button" class="btn btn-link">Read More</button>-->
+        </div>
+    </section>
+
+    <section class="parallax wow fadeInUp" id="pooja-div-8">
+        <div class="container text-center custom-bg">
+            <h4 class="whiteText">{{poojas[7].header}}</h4>
+            <hr>
+            <div class="container" style="width: 80%;">
+                <span style="width: 80%;" class="whiteText">{{poojas[7].content}}</span>
             </div>
             <br><br>
             <!--<button style="color: black;" type="button" class="btn btn-link">Read More</button>-->

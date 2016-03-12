@@ -16,6 +16,16 @@
 
 
         $scope.announcements = [
+             {
+                head: 'Website Inauguration',
+                desc: 'Temple Website was inaugurated by Yagam General convener Mr. Akkavila sathik at Vadakkekunnathu Sreerajarajeswari Devi Temple.',
+                imgSrc:'http://i.imgur.com/NBdC18eh.jpg'
+            }
+            ,{
+                head: 'Kappukettu',
+                desc: 'Kappukettu in connection with Sree MahaGayathri Yagam at Vadakkekunnathu Sreerajarajeswari Devi Temple',
+                imgSrc:'http://i.imgur.com/myFkssPh.jpg'
+            },
             {
                 head: 'GayathriYagam Announcement ',
                 desc: 'Mookambika thanthri Ninthyananda Adiga & His wife Rakshitha adiga have visited Kollam Kadappakkada Vadakkekunnathu Sree Rajarajeswari Devi Temple for the preparation of Yaga Mandam and everything to do the best',
@@ -29,11 +39,7 @@
                 desc: 'Kerala High Court justice Honorable Mr. K K Utharan inaugurating the ceremony',
                 imgSrc:'images/yagam/announcements/a3.jpg'
             }
-            //,{
-            //    head: 'Annadanam',
-            //    desc: 'Annadanam will be held as a part of MahaGayathri Yagam. Devotees wishing to host a days annadanam can contact us',
-            //    imgSrc:'images/yagam/annadanam.jpg'
-            //}
+
         ];
         var $images = $('.docs-pictures');
         var $toggles = $('.docs-toggles');
@@ -69,7 +75,7 @@
         });
 
         $('.carousel').carousel({
-            interval: 4000
+            interval: 3000
         });
     }]);
 
