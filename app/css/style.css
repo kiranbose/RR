@@ -1,12 +1,5 @@
-.maketextgold, .homesection1 #storyhead, .main-events .event-head {
-  color: #D5AD6D;
-  /*if no support for background-clip*/
-  background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, #d5ad6d 0%, #d5ad6d 26%, #e2ba78 35%, #a37e43 45%, #91703b 61%, #d5ad6d 100%);
-  background: -o-linear-gradient(transparent, transparent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lusitana);
 .homesection1 #storyhead {
   font-size: x-large;
 }
@@ -31,6 +24,10 @@
 
 .carousel-caption h5 {
   font-size: small;
+}
+.carousel-caption span {
+  font-size: large;
+  font-weight: bold;
 }
 
 .upadevatasdiv {
@@ -66,6 +63,11 @@
   color: #926318;
 }
 
+.app-title {
+  font-family: "Lusitana", serif;
+  font-weight: bolder;
+}
+
 footer.page-footer {
   margin-top: 0px !important;
 }
@@ -79,7 +81,17 @@ footer.page-footer {
 }
 
 html, body {
+  font-family: "Montserrat", sans-serif;
   height: auto;
+}
+
+.maketextgold, .homesection1 #storyhead, .main-events .event-head {
+  color: #D5AD6D;
+  /*if no support for background-clip*/
+  background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, #d5ad6d 0%, #d5ad6d 26%, #e2ba78 35%, #a37e43 45%, #91703b 61%, #d5ad6d 100%);
+  background: -o-linear-gradient(transparent, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .whiteText {
@@ -164,7 +176,7 @@ html, body {
   cursor: pointer;
 }
 .rrnavbar ul li span {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: darkgoldenrod;
   display: inline-block;
@@ -197,7 +209,7 @@ html, body {
   }
 
   #selectedMenu {
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
     color: darkgoldenrod;
     display: inline-block;
@@ -230,7 +242,7 @@ html, body {
   }
 }
 #selectedMenu {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: darkgoldenrod;
   display: inline-block;

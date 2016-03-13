@@ -1,17 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lusitana);
 //*******************************Variables***********************
-$font-stack: 'Roboto', sans-serif;
+$font-stack:  'Montserrat', sans-serif;
 $primary-text: darkgoldenrod;
 $nav-underline-color: goldenrod;
 $rr-gold: goldenrod;
 $rr-gold-dark: darkgoldenrod;
 $rr-gold-darker: #926318;
 $rr-gold-light: gold;
+$font-logo: 'Lusitana', serif;
 //***************************************************************
 
 //*******************************imports***********************
 @import '../src/home/views/home.scss';
 //***************************************************************
 
+
+.app-title{
+  //@include maketextgold;
+  font-family: $font-logo;
+  font-weight: bolder;
+}
 
 footer.page-footer {
   margin-top: 0px !important;
@@ -25,9 +34,21 @@ footer.page-footer {
   border-radius: 5px;
 }
 html, body {
-  //font-family: $font-stack;
+  font-family: $font-stack;
   height: auto;
 }
+
+
+.maketextgold{
+  color:	#D5AD6D; /*if no support for background-clip*/
+
+  background: -webkit-linear-gradient(transparent, transparent),
+  -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+  background: -o-linear-gradient(transparent, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 .whiteText{
   color:white;
