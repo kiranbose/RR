@@ -16,10 +16,15 @@
 
 
         $scope.announcements = [
-             {
+            {
                 head: 'Website Inauguration',
                 desc: 'Temple Website was inaugurated by Yagam General convener Mr. Akkavila sathik at Vadakkekunnathu Sreerajarajeswari Devi Temple.',
                 imgSrc:'http://i.imgur.com/NBdC18eh.jpg'
+            },
+            {
+                head: 'Vilambara Sthoopam',
+                desc: 'The Sthoopam erected at kadappakada Junction, Kollam for Maha Gayathri Yagam.',
+                imgSrc:'http://i.imgur.com/ggaG3uD.jpg'
             }
             ,{
                 head: 'Kappukettu',
