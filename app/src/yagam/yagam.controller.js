@@ -37,7 +37,7 @@
                 imgSrc:'images/yagam/announcements/a1.jpg'
             },{
                 head: 'Gift of Food',
-                desc: 'Food will be served on all 5 days of yagam in temple. Devotees interested in sponsoring Annadaanam can contact temple and book at the earliest. Availability depends.',
+                desc: 'Food was served on all 5 days of yagam in temple. ',
                 imgSrc:'images/yagam/annadanam.jpg'
             },{
                 head: 'MahaGayathriYaga Karyakarthra yogam',
