@@ -270,11 +270,7 @@ html, body {
 }
 
 .rr-margin-left-60, .item5:hover ~ #floatingline {
-  margin-left: 65% !important;
-}
-
-.rr-margin-left-70, .item6:hover ~ #floatingline {
-  margin-left: 73% !important;
+  margin-left: 66% !important;
 }
 
 .goldline {
