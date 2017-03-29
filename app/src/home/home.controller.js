@@ -25,7 +25,7 @@
             {Name:'Bhrahmarakshass',imageSrc:'images/round/r5.jpg',text:''},
            ];
 
-
+           $(".ulsavamBtn").trigger('click');
     }]);
 
 
