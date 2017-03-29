@@ -80,10 +80,10 @@
                 templateUrl: "src/contact/views/contact.html",
                 controller: 'contactController',
                 onEnter: function() {
-                    angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-70');
+                    angular.element(document.querySelector( '#floatingline' )).addClass('rr-margin-left-60');
                 },
                 onExit: function() {
-                    angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-70');
+                    angular.element(document.querySelector( '#floatingline' )).removeClass('rr-margin-left-60');
                 }
             });
 

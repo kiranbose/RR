@@ -193,7 +193,7 @@ html, body {
   background: goldenrod;
   border: none;
   transition: .3s ease-in-out;
-  margin-left: 20%;
+  margin-left: 24%;
 }
 
 .rrnavbar-fixed {
@@ -254,27 +254,27 @@ html, body {
 }
 
 .rr-margin-left-20, .item1:hover ~ #floatingline {
-  margin-left: 20% !important;
+  margin-left: 24% !important;
 }
 
 .rr-margin-left-30, .item2:hover ~ #floatingline {
-  margin-left: 30% !important;
+  margin-left: 35% !important;
 }
 
 .rr-margin-left-40, .item3:hover ~ #floatingline {
-  margin-left: 40% !important;
+  margin-left: 45% !important;
 }
 
 .rr-margin-left-50, .item4:hover ~ #floatingline {
-  margin-left: 50% !important;
+  margin-left: 55% !important;
 }
 
 .rr-margin-left-60, .item5:hover ~ #floatingline {
-  margin-left: 60% !important;
+  margin-left: 65% !important;
 }
 
 .rr-margin-left-70, .item6:hover ~ #floatingline {
-  margin-left: 70% !important;
+  margin-left: 73% !important;
 }
 
 .goldline {

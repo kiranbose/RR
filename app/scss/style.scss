@@ -235,22 +235,22 @@ html, body {
 
 
 .rr-margin-left-20{
-  margin-left: 20% !important;
+  margin-left: 24% !important;
 }
 .rr-margin-left-30{
-  margin-left: 30% !important;
+  margin-left: 35% !important;
 }
 .rr-margin-left-40{
-  margin-left: 40% !important;
+  margin-left: 45% !important;
 }
 .rr-margin-left-50{
-  margin-left: 50% !important;
+  margin-left: 55% !important;
 }
 .rr-margin-left-60{
-  margin-left: 60% !important;
+  margin-left: 66% !important;
 }
 .rr-margin-left-70{
-  margin-left: 70% !important;
+  margin-left: 77% !important;
 }
 //
 //.item1 .item2 .item3 .item4 .item5 .item6{
@@ -275,9 +275,9 @@ html, body {
 .item5:hover ~ #floatingline {
   @extend .rr-margin-left-60;
 }
-.item6:hover ~ #floatingline {
-  @extend .rr-margin-left-70;
-}
+// .item6:hover ~ #floatingline {
+//   @extend .rr-margin-left-70;
+// }
 
 .goldline{
   height: 1px;
@@ -356,3 +356,24 @@ html, body {
 /***********************************VIEWER JS pictures CSS end***********************************/
 
 @import '../src/poojas/views/poojas.scss';
+
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 900px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-xl {
+    width: 90%;
+   max-width:1200px;
+  }
+}
