@@ -148,6 +148,42 @@ $(document).ready(function() {
 
 (function (window, angular, undefined) {
     "use strict";
+    var rrContactControllers = angular.module('rr.contact.controllers', []);
+
+    rrContactControllers.controller('contactController', ['$scope','$window',function ($scope,$window) {
+    $('html, body').animate({scrollTop: 0}, "slow");
+    //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
+    $scope.selectedMenuItem = "CONTACTS";
+    $scope.pageData = "Hello CONTACTS";
+
+        $scope.contacts = [
+            {name:"Sri. B.C Bose",desc:"The Acharya and the President",ph:"9447894916",imgSrc:"images/contacts/contact1.jpg"},
+            {name:"Sri. M. Padmalal",desc:"The Secretary",ph:"944556548",imgSrc:"images/contacts/contact2.jpg"},
+            {name:"Sri. N. Santhosh Kumar",desc:"The Treasurer",ph:"9747105777",imgSrc:"images/contacts/contact3.jpg"}
+        ];
+
+    }]);
+
+
+})(window, window.angular);
+
+/**
+ * Created by kiran on 1/17/2016.
+ */
+(function(window, angular, undefined) {
+    "use strict";
+
+    angular.module("rr.contact", [
+        "rr.contact.controllers"
+    ]);
+
+})(window, window.angular);
+/**
+ * Created by kiran on 1/17/2016.
+ */
+
+(function (window, angular, undefined) {
+    "use strict";
     var rrEventsControllers = angular.module('rr.events.controllers', []);
 
     rrEventsControllers.controller('eventsController', ['$scope','$window',function ($scope,$window) {
@@ -203,42 +239,6 @@ $(document).ready(function() {
 
     angular.module("rr.events", [
         "rr.events.controllers"
-    ]);
-
-})(window, window.angular);
-/**
- * Created by kiran on 1/17/2016.
- */
-
-(function (window, angular, undefined) {
-    "use strict";
-    var rrContactControllers = angular.module('rr.contact.controllers', []);
-
-    rrContactControllers.controller('contactController', ['$scope','$window',function ($scope,$window) {
-    $('html, body').animate({scrollTop: 0}, "slow");
-    //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
-    $scope.selectedMenuItem = "CONTACTS";
-    $scope.pageData = "Hello CONTACTS";
-
-        $scope.contacts = [
-            {name:"Sri. B.C Bose",desc:"The Acharya and the President",ph:"9447894916",imgSrc:"images/contacts/contact1.jpg"},
-            {name:"Sri. M. Padmalal",desc:"The Secretary",ph:"944556548",imgSrc:"images/contacts/contact2.jpg"},
-            {name:"Sri. N. Santhosh Kumar",desc:"The Treasurer",ph:"9747105777",imgSrc:"images/contacts/contact3.jpg"}
-        ];
-
-    }]);
-
-
-})(window, window.angular);
-
-/**
- * Created by kiran on 1/17/2016.
- */
-(function(window, angular, undefined) {
-    "use strict";
-
-    angular.module("rr.contact", [
-        "rr.contact.controllers"
     ]);
 
 })(window, window.angular);
@@ -328,6 +328,50 @@ $(document).ready(function() {
 
 (function (window, angular, undefined) {
     "use strict";
+    var rrHomeControllers = angular.module('rr.home.controllers', []);
+
+    rrHomeControllers.controller('homeController', ['$scope','$window',function ($scope,$window) {
+        $('html, body').animate({scrollTop: 0}, "slow");
+
+        $('.carousel').carousel({
+            interval: 3000
+        });
+        //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
+        $scope.selectedMenuItem = "HOME";
+        $scope.pageData = "Hello HOME";
+        console.log("Howdy.. geek. \n Drop a mail to kiranbose@gmail.com for any queries. \n May the Force be with you !");
+
+        $scope.upaDevatas = [{Name:'Muthappan',imageSrc:'images/round/r1.gif',text:''},
+            {Name:'Yogeeswaran',imageSrc:'images/round/r2.jpg',text:''},
+            {Name:'NagaRaja',imageSrc:'images/round/r3.jpg',text:''},
+            {Name:'Naga YakshiAmma',imageSrc:'images/round/r4.jpg',text:''},
+            {Name:'Naga Kanyaka',imageSrc:'images/round/r5.jpg',text:''},
+            {Name:'Bhrahmarakshass',imageSrc:'images/round/r5.jpg',text:''},
+           ];
+
+        //    enable this during ulsavam time to display and update popup
+        //    $(".ulsavamBtn").trigger('click');
+    }]);
+
+
+})(window, window.angular);
+/**
+ * Created by kiran on 1/17/2016.
+ */
+(function(window, angular, undefined) {
+    "use strict";
+
+    angular.module("rr.home", [
+        "rr.home.controllers"
+    ]);
+
+})(window, window.angular);
+/**
+ * Created by kiran on 1/17/2016.
+ */
+
+(function (window, angular, undefined) {
+    "use strict";
     var rrPoojasControllers = angular.module('rr.poojas.controllers', []);
 
     rrPoojasControllers.controller('poojasController', ['$scope', '$window', function ($scope, $window) {
@@ -402,49 +446,6 @@ $(document).ready(function() {
 
     angular.module("rr.poojas", [
         "rr.poojas.controllers"
-    ]);
-
-})(window, window.angular);
-/**
- * Created by kiran on 1/17/2016.
- */
-
-(function (window, angular, undefined) {
-    "use strict";
-    var rrHomeControllers = angular.module('rr.home.controllers', []);
-
-    rrHomeControllers.controller('homeController', ['$scope','$window',function ($scope,$window) {
-        $('html, body').animate({scrollTop: 0}, "slow");
-
-        $('.carousel').carousel({
-            interval: 3000
-        });
-        //angular.element(document.querySelector( '#selectedMenu' )).html('EVENTS');
-        $scope.selectedMenuItem = "HOME";
-        $scope.pageData = "Hello HOME";
-        console.log("Howdy.. geek. \n Drop a mail to kiranbose@gmail.com for any queries. \n May the Force be with you !");
-
-        $scope.upaDevatas = [{Name:'Muthappan',imageSrc:'images/round/r1.gif',text:''},
-            {Name:'Yogeeswaran',imageSrc:'images/round/r2.jpg',text:''},
-            {Name:'NagaRaja',imageSrc:'images/round/r3.jpg',text:''},
-            {Name:'Naga YakshiAmma',imageSrc:'images/round/r4.jpg',text:''},
-            {Name:'Naga Kanyaka',imageSrc:'images/round/r5.jpg',text:''},
-            {Name:'Bhrahmarakshass',imageSrc:'images/round/r5.jpg',text:''},
-           ];
-
-           $(".ulsavamBtn").trigger('click');
-    }]);
-
-
-})(window, window.angular);
-/**
- * Created by kiran on 1/17/2016.
- */
-(function(window, angular, undefined) {
-    "use strict";
-
-    angular.module("rr.home", [
-        "rr.home.controllers"
     ]);
 
 })(window, window.angular);
