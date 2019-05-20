@@ -3093,8 +3093,8 @@ footer.page-footer .footer-content {
 
 footer.page-footer .footer-copyright {
   overflow: hidden;
-  height: 50px;
-  line-height: 50px;
+  height: 80px;
+  line-height: 0;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -3106,6 +3106,13 @@ footer.page-footer .column-title {
 footer.page-footer a {
   font-weight: 300;
   font-size: 18px;
+  line-height: 40px;
+  color: #fff;
+}
+
+footer.page-footer .credits p{
+  font-weight: 300;
+  font-size: 14px;
   line-height: 40px;
   color: #fff;
 }
@@ -3664,7 +3671,8 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: "Roboto",     sans-serif;
+  font-family: "Roboto",
+     sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
 }
